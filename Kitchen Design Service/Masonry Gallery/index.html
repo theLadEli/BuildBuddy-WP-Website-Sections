@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Masonry Gallery</title>
+  <style>
+    /* Masonry Layout CSS */
+    .masonry-gallery {
+      column-count: 3;
+      column-gap: 10px;
+    }
+    
+    .masonry-gallery img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    /* Lightbox CSS */
+    #lightbox {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    #lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    #lightbox-content {
+      max-width: 70vw; /* Modified lightbox width */
+      max-height: 90%;
+      position: relative;
+    }
+    
+    #lightbox-content img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    #lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    /* Navigation Arrows CSS */
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .lightbox-nav.prev {
+      left: 10px;
+    }
+    
+    .lightbox-nav.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="masonry-gallery">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-02.png" alt="Image 1">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-03.png" alt="Image 2">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-04.png" alt="Image 3">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-05.png" alt="Image 4">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-06.png" alt="Image 5">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-07.png" alt="Image 6">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-08.png" alt="Image 7">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-09.png" alt="Image 8">
+    <img src="http://staging15.buildbuddy.co/wp-content/uploads/2023/07/Kitchen-Design-Service-Image-Gallery-10.png" alt="Image 9">
+  </div>
+
+  <div id="lightbox">
+    <div id="lightbox-content">
+      <span id="lightbox-close">&times;</span>
+      <img id="lightbox-image" src="" alt="Lightbox Image">
+      <span class="lightbox-nav prev">&#8249;</span>
+      <span class="lightbox-nav next">&#8250;</span>
+    </div>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    var images = document.querySelectorAll('.masonry-gallery img');
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImage = document.getElementById('lightbox-image');
+    var lightboxClose = document.getElementById('lightbox-close');
+    var lightboxPrev = document.querySelector('.lightbox-nav.prev');
+    var lightboxNext = document.querySelector('.lightbox-nav.next');
+    var currentIndex = 0;
+    
+    images.forEach(function(image, index) {
+      image.addEventListener('click', function() {
+        currentIndex = index;
+        lightboxImage.src = image.src;
+        lightbox.classList.add('active');
+      });
+    });
+    
+    lightboxClose.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+    });
+    
+    lightboxPrev.addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+    });
+    
+    lightboxNext.addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+    });
+  </script>
+</body>
+</html>
