@@ -1,0 +1,156 @@
+<style>
+    .accordion {
+        background-color: #fff;
+        cursor: pointer;
+        padding: 20px;
+        width: 100%;
+        border: 1px solid #E6E9F0;
+        border-radius: 10px;
+        transition: 0.4s;
+        margin-bottom: 20px;
+
+        font-family: "Aeonik", sans-serif;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 20px;
+        color: #272F3A;
+        text-align: left;
+    }
+
+    .accordion-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .accordion-icon {
+        width: 13px;
+        height: 20px;
+        margin-right: 20px;
+    }
+
+    .active .accordion-icon {
+        content: url("http://staging15.buildbuddy.co/wp-content/uploads/2023/06/minus.svg");
+    }
+
+    .panel {
+        padding: 0 32px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .panel p {
+        margin-top: 30px;
+        font-size: 15px;
+        line-height: 19px;
+    }
+</style>
+
+
+
+<div class="accordion">
+    <div class="accordion-button">
+        <img class="accordion-icon" src="http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg">
+        <span>Incurring unexpected costs due to an expanding scope of work?</span>
+    </div>
+    <div class="panel">
+        <p>
+            It's common for the scope of work to grow as your home extension project progresses, leading to unexpected cost overruns. At BuildBuddy, we help you establish a clear, detailed plan from the start, including a breakdown of costs, ensuring you have a realistic budget and timeline. Our comprehensive approach helps prevent unanticipated costs and keeps your project on track.
+        </p>
+    </div>
+</div>
+
+
+<div class="accordion">
+    <div class="accordion-button">
+        <img class="accordion-icon" src="http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg">
+        <span>Unable to compare quotes from different builders?</span>
+    </div>
+    <div class="panel">
+        <p>
+            Comparing quotes from different builders can be like comparing apples to oranges due to their diverse methodologies and varying level of detail. BuildBuddy's platform makes this task simpler. We provide a standardised set of specifications for your project, so every builder is quoting on the same basis. This makes it easier for you to compare quotes side by side and select the best one for your needs.
+        </p>
+    </div>
+</div>
+
+<div class="accordion">
+    <div class="accordion-button">
+        <img class="accordion-icon" src="http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg">
+        <span>Delays to project completion </span>
+    </div>
+    <div class="panel">
+        <p>
+            Supply delays can significantly impact the construction timeline. With BuildBuddy, you'll plan ahead, choosing fixtures, fittings, and materials in advance. Our platform helps you ensure everything is ordered on time, minimising the risk of delays.
+        </p>
+    </div>
+</div>
+
+<div class="accordion">
+    <div class="accordion-button">
+        <img class="accordion-icon" src="http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg">
+        <span>Struggling to keep track of spending?</span>
+    </div>
+    <div class="panel">
+        <p>
+            Keeping track of spending can be complex during an extension project. That's where BuildBuddy steps in. Our Budget Tool comes equipped with a cost tracker, enabling you to monitor your expenses in real-time. This proactive approach to budget management helps prevent overspending and keeps your project within financial bounds.
+        </p>
+    </div>
+</div>
+
+<div class="accordion">
+    <div class="accordion-button">
+        <img class="accordion-icon" src="http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg">
+        <span>Finding the whole process confusing and overwhelming </span>
+    </div>
+    <div class="panel">
+        <p>
+            Understanding extension process and terminology can be challenging. That's why BuildBuddy provides an easy to follow step-by-step guide with a handy Home Extension Glossary.
+        </p>
+    </div>
+</div>
+
+<div class="accordion">
+    <div class="accordion-button">
+        <img class="accordion-icon" src="http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg">
+        <span>The final build doesn't match my initial vision</span>
+    </div>
+    <div class="panel">
+        <p>
+            Understanding your vision is paramount at BuildBuddy. For kitchen extensions, we've partnered with a leading kitchen design firm that provides FREE bespoke designs tailored to your preferences. These detailed designs, viewable in immersive 3D, ensure your kitchen is built to your exact specifications, guaranteeing that the final build aligns with your initial vision.
+        </p>
+    </div>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            // Close all other accordions
+            for (var j = 0; j < acc.length; j++) {
+                if (acc[j] !== this) {
+                    acc[j].classList.remove("active");
+                    acc[j].children[1].style.maxHeight = null;
+                    acc[j].children[0].children[0].src =
+                        "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg"; // path to plus icon
+                }
+            }
+
+            // Toggle this accordion
+            this.classList.toggle("active");
+            var panel = this.children[1];
+            var icon = this.children[0].children[0];
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                icon.src =
+                "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/plus.svg"; // path to plus icon
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                icon.src =
+                "http://staging15.buildbuddy.co/wp-content/uploads/2023/06/minus.svg"; // path to minus icon
+            }
+        });
+    }
+</script>
