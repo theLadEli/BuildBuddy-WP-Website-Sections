@@ -1,0 +1,120 @@
+@media only screen and (max-width: 600px) {
+
+    #vetting_wrapper {
+        border-radius: 15px;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+body {
+    padding: 50px;
+}
+
+#vetting_wrapper {
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-stacked-text-div-block {
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+}
+
+.vetting_card {
+    /* Layout */
+    display: flex;
+    align-items: flex-start;
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    margin-bottom: 100px;
+    min-height: 450px; 
+    margin-bottom: 100px;
+
+    /* Style */
+    background: #0C1C2C;
+    border-radius: 1rem;
+    box-shadow: 14px 14px 20px rgba(0, 0, 0, .1);
+    
+    /* Typography */
+    color: #fff;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.card-title-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: #0C1C2C;
+}
+
+.vetting_card img {
+    height: 45px;
+    padding-right: 32px;
+}
+
+.vetting_card h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35px;
+    gap: 20px;
+    padding: 10px 32px 0;
+}
+
+.vetting_card p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 15px 32px;
+}
+
+/* Individual Card Styling */
+
+.vetting_card._1 {
+    top: 22%;
+    /* margin-bottom: 250px; */
+    border: solid 10px #57B3BD;
+}
+
+._1 .card-title-bar {
+    background: #57B3BD;
+}
+
+.vetting_card._2 {
+    top: 26%;
+    border: solid 10px #BCE8ED;
+}
+
+._2 .card-title-bar {
+    background: #BCE8ED;
+}
+
+.vetting_card._3 {
+    top: 30%;
+    border: solid 10px #FF694E;
+}
+
+._3 .card-title-bar {
+    background: #FF694E;
+}
+
+.vetting_card._4 {
+    top: 24%;
+    border: solid 10px #3399FD;
+}
+
+._4 .card-title-bar {
+    background: #3399FD;
+}

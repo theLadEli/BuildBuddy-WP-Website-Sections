@@ -1,0 +1,50 @@
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background: #ddd;
+    border: 2px dotted #555;
+}
+
+.timeline-item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.timeline-img {
+    left: -50px;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-radius: 50%;
+    position: absolute;
+    background: #ddd;
+}
+
+.timeline-content {
+    width: 50%;
+    position: relative;
+    left: 50px;
+    padding-left: 20px;
+}
+
+.timeline-content h2 {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.timeline-content p {
+    margin: 10px 0 0;
+    padding: 0;
+}
